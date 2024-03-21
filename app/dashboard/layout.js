@@ -18,7 +18,7 @@ export default function DashboardLayout({ children }) {
                 <div className=''>
                     <div className="flex">
                         {/* Sidebar for larger screens */}
-                        <div >
+                        <div className="h-full" >
                             <Sidebar setIsLoading={setIsLoading} setIsSidebarOpen={setIsSidebarOpen} toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen } />
                         </div>
 
@@ -34,7 +34,7 @@ export default function DashboardLayout({ children }) {
                                     <div className="loader">Loading.......</div>
                                 </div>
                             ) : (
-                                <div className={`h-screen bg-slate-200 p-3 px-4 ${isSidebarOpen ? '' : ''}`}>
+                                <div className="h-screen bg-white p-3 px-4">
                                     {children}
                                 </div>
                             )}
