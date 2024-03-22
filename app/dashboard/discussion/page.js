@@ -10,7 +10,7 @@ const DiscussionPage = () => {
         <div className='h-screen'>
             {/* large screen */}
 
-            <div className='hidden   lg:grid gap-8  grid-cols-9'>
+            <div className='hidden   lg:grid gap-4   grid-cols-9'>
                 <div className='col-span-6 text-center  '>
                  
                     <p className='bg-slate-200 text-red-400'>Discuttion Foroum</p>
@@ -18,8 +18,8 @@ const DiscussionPage = () => {
                     <DiscussionForumCard />
                     </div>
                 </div>
-                <div className='col-span-3 text-center bg-slate-200 text-red-400'>
-                    Market Stroies
+                <div className='col-span-3 '>
+                    <p className='text-center bg-slate-200 text-red-400'>Market Stroies</p>
                     <div className="flex flex-col gap-y-4">
                         <MarketStoriesCard />
                     </div>

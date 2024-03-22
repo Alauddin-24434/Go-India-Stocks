@@ -9,7 +9,7 @@ export default function Home() {
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl font-bold mb-8">Welcome to Go India Stocks</h1>
         <p className="text-lg mb-8">Hi, my name is Alauddin. This is a website where you can explore more about stocks and investing.</p>
-        <Link href="/dashboard">
+        <Link href="/dashboard/discussion">
           <span className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
             Explore Dashboard
           </span>

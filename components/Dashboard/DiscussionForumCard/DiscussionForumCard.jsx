@@ -5,71 +5,122 @@ import { FaRegHeart, FaRegEye, FaRegComment, FaShareAlt } from 'react-icons/fa';
 const DiscussionForumCard = () => {
     const dummyPosts = [
         {
-            id: 1,
-            userName: "John Doe",
-            userPhoto: "https://randomuser.me/api/portraits/men/1.jpg",
-            postText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget ligula sit amet ante consequat lacinia.",
-            sectorNumber: 3,
-            postTime: 8,
-
+            id: 3,
+            userName: "Emily Johnson",
+            userPhoto: "https://randomuser.me/api/portraits/women/2.jpg",
+            postText: "Spent the day exploring ancient ruins and uncovering secrets of the past. History is truly fascinating!",
+            sectorNumber: 4,
+            postTime: 6,
         },
         {
-            id: 2,
-            userName: "Alice Smith",
-            userPhoto: "https://randomuser.me/api/portraits/women/1.jpg",
-            postText: "Sed efficitur, mauris ac gravida viverra, elit dui lobortis odio, nec pretium nunc turpis a nisi.",
-            sectorNumber: 2,
-            postTime: 2,
-
+            id: 4,
+            userName: "Michael Brown",
+            userPhoto: "https://randomuser.me/api/portraits/men/2.jpg",
+            postText: "Attended an inspiring workshop on sustainable living today. Feeling motivated to make positive changes!",
+            sectorNumber: 1,
+            postTime: 10,
         },
-        // Add more dummy posts as needed
+        {
+            id: 5,
+            userName: "Emma Wilson",
+            userPhoto: "https://randomuser.me/api/portraits/women/3.jpg",
+            postText: "Visited a local art gallery and was blown away by the creativity and talent on display. Art truly speaks to the soul.",
+            sectorNumber: 6,
+            postTime: 4,
+        },
+        {
+            id: 6,
+            userName: "William Taylor",
+            userPhoto: "https://randomuser.me/api/portraits/men/3.jpg",
+            postText: "Started a new book today and couldn't put it down. There's something magical about getting lost in a good story.",
+            sectorNumber: 5,
+            postTime: 12,
+        },
+        {
+            id: 7,
+            userName: "Sophia Martinez",
+            userPhoto: "https://randomuser.me/api/portraits/women/4.jpg",
+            postText: "Spent the afternoon volunteering at a local shelter. It's heartwarming to make a difference in someone's life.",
+            sectorNumber: 2,
+            postTime: 5,
+        },
+        {
+            id: 8,
+            userName: "Ethan Anderson",
+            userPhoto: "https://randomuser.me/api/portraits/men/4.jpg",
+            postText: "Took a spontaneous road trip with friends and created unforgettable memories along the way. Life is an adventure!",
+            sectorNumber: 3,
+            postTime: 9,
+        },
+        {
+            id: 9,
+            userName: "Olivia Garcia",
+            userPhoto: "https://randomuser.me/api/portraits/women/5.jpg",
+            postText: "Reflecting on the beauty of nature and feeling grateful for the simple joys it brings. Sometimes, it's the little things that matter most.",
+            sectorNumber: 4,
+            postTime: 3,
+        },
+        {
+            id: 10,
+            userName: "James Rodriguez",
+            userPhoto: "https://randomuser.me/api/portraits/men/5.jpg",
+            postText: "Attended an outdoor concert last night and danced under the stars. Music has a way of bringing people together.",
+            sectorNumber: 1,
+            postTime: 7,
+        },
+        {
+            id: 11,
+            userName: "Ava Hernandez",
+            userPhoto: "https://randomuser.me/api/portraits/women/6.jpg",
+            postText: "Cooked a delicious meal from scratch today and shared it with loved ones. Food always tastes better when it's made with love.",
+            sectorNumber: 5,
+            postTime: 11,
+        },
     ];
-
+    
 
 
     return (
         <div className='flex flex-col'>
-            {dummyPosts.map(post => (
-                <div className='grid relative grid-cols-8  gap-2 border border-t ' key={post.id}>
-                    <div className='mx-3 col-span-1'>
-                        <img className='w-12 h-12 rounded-full' src={post.userPhoto} alt="User" />
-                    </div>
-                    <div className='col-span-6'>
-                        <div className='flex gap-4'>
-                            <p>{post.userName}</p>
-                            <p className='bg-blue-600 rounded-2xl px-4'>Sector {post.sectorNumber}</p>
-                        </div>
-                        <p className='min-h-44'>{post.postText}</p> 
-                        <div className='flex absolute bottom-2 w-full justify-between'>
-                      
-
-
-                      <div className='flex  items-center gap-2'>
-                          <FaRegHeart />
-                          <span>2k</span>
-                      </div>
-                      <div className='flex items-center gap-2'>
-                          <FaRegEye />
-                          <span>2k</span>
-                      </div>
-                      <div className='flex items-center gap-2'>
-                          <FaRegComment />
-                          <span>2k Comments</span>
-                      </div> 
-                       <div className='flex items-center gap-2'>
-                          <FaShareAlt />
-                          <span>Share</span>
-                      </div>
-                   </div> 
-                    </div>
-                    
-                 <div className='col-span-1 '>
-                 <p className=' flex items-center'>{post.postTime} <span>min ago</span></p>
-                 </div>
-                   
+    {dummyPosts.map(post => (
+        <div className='grid relative grid-cols-8 gap-2 border border-t' key={post.id}>
+            <div className='mx-3 col-span-1'>
+                <img className='w-12 h-12 rounded-full' src={post.userPhoto} alt="User" />
+            </div>
+            <div className='col-span-6 flex flex-col'>
+                <div className='flex items-center gap-4'>
+                    <p>{post.userName}</p>
+                    <p className='bg-blue-600 rounded-2xl px-4'>Sector {post.sectorNumber}</p>
                 </div>
-            ))}
+                <p className='min-h-44'>{post.postText}</p>
+                <div className='flex items-center gap-28 justify-between'>
+                    <div className='flex items-center gap-2 hover:text-red-500 cursor-pointer'>
+                        <FaRegHeart className='w-6 h-6' />
+                        <span>2k</span>
+                    </div>
+                    <div className='flex items-center gap-2 hover:text-red-500 cursor-pointer'>
+                        <FaRegEye className='w-6 h-6' />
+                        <span>2k</span>
+                    </div>
+                    <div className='flex items-center gap-2 hover:text-red-500 cursor-pointer'>
+                        <FaRegComment className='w-6 h-6' />
+                        <span>2k Comments</span>
+                    </div>
+                    <div className='flex items-center gap-2 hover:text-red-500 cursor-pointer'>
+                        <FaShareAlt className='w-6 h-6' />
+                        <span>Share</span>
+                    </div>
+                </div>
+            </div>
+            <div className='col-span-1'>
+                <p className='flex items-center'>
+                    <time dateTime={post.postTime}>{post.postTime} min ago</time>
+                </p>
+            </div>
         </div>
+    ))}
+</div>
+
     );
 };
 

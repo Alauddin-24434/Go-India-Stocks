@@ -36,11 +36,7 @@ const Sidebar = ({ toggleSidebar, setIsLoading, isSidebarOpen, setIsSidebarOpen 
 
 
     const sidebarItems = [
-        {
-            title: "Dashboard",
-            path: '/dashboard',
-            icon: <MdDashboard />
-        },
+       
         {
             title: "Discussion Forum",
             path: '/dashboard/discussion',
@@ -58,13 +54,28 @@ const Sidebar = ({ toggleSidebar, setIsLoading, isSidebarOpen, setIsSidebarOpen 
             icon: <MdDashboard />
         },
         {
-            title: "Episode",
-            path: "/dashboard/episode",
+            title: "Market",
+            path: "/dashboard/market",
             icon: <MdDashboard />
         },
         {
-            title: "Report",
-            path: "/dashboard/report",
+            title: "Sector",
+            path: "/dashboard/sector",
+            icon: <MdDashboard />
+        },
+        {
+            title: "Watchlist",
+            path: "/dashboard/watchlist",
+            icon: <MdDashboard />
+        },
+        {
+            title: "Events",
+            path: "/dashboard/event",
+            icon: <MdDashboard />
+        },
+        {
+            title: "News/Interviews",
+            path: "/dashboard/news-interviews",
             icon: <MdDashboard />
         },
 
