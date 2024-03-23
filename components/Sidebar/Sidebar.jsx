@@ -2,19 +2,25 @@
 import React, { useEffect, useState } from 'react';
 
 import { FaUser } from "react-icons/fa";
+import { BiSolidMessageDetail, BiIntersect } from "react-icons/bi";
 import { IoNotifications } from "react-icons/io5";
 import { IoChevronForwardSharp } from "react-icons/io5";
-import { FaLessThan } from "react-icons/fa6";
-
+import { FiLogOut } from "react-icons/fi";
+import { RiFileList3Fill, RiChatHistoryFill } from "react-icons/ri";
+import { MdEventAvailable } from "react-icons/md";
 import styles from "./Sidebar.module.css"
 import {
-    MdDashboard,
 
+    MdOutlineTableView
 
 } from "react-icons/md";
+import { LuNewspaper } from "react-icons/lu";
+import { IoMdAnalytics } from "react-icons/io";
 import MenuLinks from './MenuLinks';
-const Sidebar = ({ toggleSidebar, setIsLoading, isSidebarOpen, setIsSidebarOpen }) => {
- 
+import { FaHome } from "react-icons/fa";
+import Link from 'next/link';
+const Sidebar = ({ toggleSidebar, isSidebarOpen, setIsSidebarOpen }) => {
+
 
     useEffect(() => {
         const handleResize = () => {
@@ -24,10 +30,7 @@ const Sidebar = ({ toggleSidebar, setIsLoading, isSidebarOpen, setIsSidebarOpen 
         window.addEventListener('resize', handleResize);
         handleResize();
 
-        // Simulate loading delay (remove this setTimeout in your actual implementation)
-        setTimeout(() => {
-            setIsLoading(false); // Set loading state to false after delay
-        }, 2000); // Adjust loading delay time as needed
+
 
         return () => {
             window.removeEventListener('resize', handleResize);
@@ -36,47 +39,47 @@ const Sidebar = ({ toggleSidebar, setIsLoading, isSidebarOpen, setIsSidebarOpen 
 
 
     const sidebarItems = [
-       
+
         {
             title: "Discussion Forum",
             path: '/dashboard/discussion',
-            icon: <FaUser />
+            icon: <BiSolidMessageDetail />
         },
         {
             title: "Market Stories",
             path: "/dashboard/market-stories",
-            icon: <MdDashboard />
+            icon: < RiChatHistoryFill />
         },
 
         {
             title: "Sentiment",
             path: "/dashboard/sentiment",
-            icon: <MdDashboard />
+            icon: <IoMdAnalytics />
         },
         {
             title: "Market",
             path: "/dashboard/market",
-            icon: <MdDashboard />
+            icon: <MdOutlineTableView />
         },
         {
             title: "Sector",
             path: "/dashboard/sector",
-            icon: <MdDashboard />
+            icon: < BiIntersect />
         },
         {
             title: "Watchlist",
             path: "/dashboard/watchlist",
-            icon: <MdDashboard />
+            icon: <RiFileList3Fill />
         },
         {
             title: "Events",
             path: "/dashboard/event",
-            icon: <MdDashboard />
+            icon: <MdEventAvailable />
         },
         {
             title: "News/Interviews",
             path: "/dashboard/news-interviews",
-            icon: <MdDashboard />
+            icon: <LuNewspaper />
         },
 
 
@@ -86,30 +89,49 @@ const Sidebar = ({ toggleSidebar, setIsLoading, isSidebarOpen, setIsSidebarOpen 
 
 
     return (
-        <section className=''>
+        <section className=' '>
             <aside className='relative flex '>
-                <div className={`lg:w-52 flex h-screen bg-slate-700 text-white flex-col w-52 border-r ${isSidebarOpen ? 'block' : 'hidden'}`}>
-                    <div className="h-16 flex gap-6 items-center justify-between px-4 bg-gray-800 text-white">
+                <div className={`lg:w-48 flex h-screen bg-slate-700 text-white flex-col w-48 border-r ${isSidebarOpen ? 'block ' : 'hidden'}`}>
+               <div className='h-auto py-2' >
+              
+                    <div className=" flex gap-6 items-center justify-between px-4  text-white">
                         {/* Sidebar header content */}
-                        <div className='flex items-center gap-2'>
-                            <span><FaUser /></span>
-                            <p>Hello, User</p>
+                        
+                        <div className='flex items-center  gap-2'>
+                            <span> <img
+                                className='w-8  h-8 rounded-full'
+                                src="https://i.ibb.co/wYyMv1k/3d-illustration-person-with-sunglasses-23-2149436188.jpg"
+                                alt="User"
+                            /></span>
+                            <p className='text-sm font-bold'>Hello, User</p>
                         </div>
                         <span><IoNotifications /></span>
                     </div>
+               </div>
+                    <hr />
                     <nav className="flex-1 overflow-y-auto">
                         <ul className={styles.list}>
                             {sidebarItems.map((item) => (
                                 <MenuLinks key={item.title} item={item} />
                             ))}
                         </ul>
+                     
                     </nav>
+                    <hr className='mb-1' />
+                <div >
+                <Link href={'/'}>
+                      <p className='flex text-sm items-center mx-4 gap-2'><FaHome />Home</p>
+                      </Link>
+                  
+                      <p className='flex text-sm items-center mx-4 gap-2'><FiLogOut  />Logout</p>
+                </div>
+                   
                 </div>
                 <button
                     onClick={toggleSidebar}
-                    className={` h-16 bg-gray-800 text-red-500 ${isSidebarOpen ? 'absolute top-1/2 -right-3' : 'fixed top-1/2 left-0 '}`}
+                    className={` h-16 bg-gray-700 text-white ${isSidebarOpen ? 'absolute top-1/2 -right-3' : 'fixed top-1/2 left-0 '}`}
                 >
-                    {isSidebarOpen ? < FaLessThan /> : <IoChevronForwardSharp />}
+                    {isSidebarOpen ? < IoChevronForwardSharp /> : <IoChevronForwardSharp />}
                 </button>
             </aside>
         </section>

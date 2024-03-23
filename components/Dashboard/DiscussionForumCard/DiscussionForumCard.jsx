@@ -82,44 +82,50 @@ const DiscussionForumCard = () => {
 
     return (
         <div className='flex flex-col'>
-    {dummyPosts.map(post => (
-        <div className='grid relative grid-cols-8 gap-2 border border-t' key={post.id}>
-            <div className='mx-3 col-span-1'>
-                <img className='w-12 h-12 rounded-full' src={post.userPhoto} alt="User" />
-            </div>
-            <div className='col-span-6 flex flex-col'>
-                <div className='flex items-center gap-4'>
-                    <p>{post.userName}</p>
-                    <p className='bg-blue-600 rounded-2xl px-4'>Sector {post.sectorNumber}</p>
+        {dummyPosts.map(post => (
+            <div className='grid relative grid-cols-8 gap-2 my-4 shadow-xl border py-3' key={post.id}>
+                <div className='col-span-1 flex justify-center'>
+                  
+                    <img
+                        className='w-8 lg:w-12 h-8 lg:h-12 rounded-full'
+                        src={post.userPhoto ? post.userPhoto : 'https://i.ibb.co/wYyMv1k/3d-illustration-person-with-sunglasses-23-2149436188.jpg'}
+                        alt="User"
+                    />
                 </div>
-                <p className='min-h-44'>{post.postText}</p>
-                <div className='flex items-center gap-28 justify-between'>
-                    <div className='flex items-center gap-2 hover:text-red-500 cursor-pointer'>
-                        <FaRegHeart className='w-6 h-6' />
-                        <span>2k</span>
+                <div className='col-span-6 flex flex-col'>
+                    <div className='flex text-xs md:text-base lg:text-base xl:text-base  items-center gap-4'>
+                        <p>{post.userName}</p>
+                        <p className='bg-blue-600 rounded-2xl px-4'>Sector {post.sectorNumber}</p>
                     </div>
-                    <div className='flex items-center gap-2 hover:text-red-500 cursor-pointer'>
-                        <FaRegEye className='w-6 h-6' />
-                        <span>2k</span>
-                    </div>
-                    <div className='flex items-center gap-2 hover:text-red-500 cursor-pointer'>
-                        <FaRegComment className='w-6 h-6' />
-                        <span>2k Comments</span>
-                    </div>
-                    <div className='flex items-center gap-2 hover:text-red-500 cursor-pointer'>
-                        <FaShareAlt className='w-6 h-6' />
-                        <span>Share</span>
+                    <p className='max-h-auto my-2 ml-0 text-xs md:text-base lg:text-base xl:text-base lg:min-h-20' style={{ textAlign: 'justify', textAlignLast: 'left' }}>{post.postText}</p>
+
+                    <div className='flex items-center mt-2 text-xs md:text-base lg:text-base xl:text-base  justify-between'>
+                        <div className='flex items-center gap-1 md:gap-2 lg:gap-2 hover:text-red-500 cursor-pointer'>
+                            <FaRegHeart />
+                            <span>2k</span>
+                        </div>
+                        <div className='flex items-center gap-1 md:gap-2 lg:gap-2 hover:text-red-500 cursor-pointer'>
+                            <FaRegEye />
+                            <span>2k</span>
+                        </div>
+                        <div className='flex items-center gap-1 md:gap-2 lg:gap-2 hover:text-red-500 cursor-pointer'>
+                            <FaRegComment />2k
+                            <span className='hidden md:block lg:block'>Comments</span>
+                        </div>
+                        <div className='flex items-center gap-1 md:gap-2 lg:gap-2 hover:text-red-500 cursor-pointer'>
+                            <FaShareAlt />
+                            <span>Share</span>
+                        </div>
                     </div>
                 </div>
+                <div className='col-span-1'>
+                    <p className='flex text-xs   items-center'>
+                        <time dateTime={post.postTime}>{post.postTime} min ago</time>
+                    </p>
+                </div>
             </div>
-            <div className='col-span-1'>
-                <p className='flex items-center'>
-                    <time dateTime={post.postTime}>{post.postTime} min ago</time>
-                </p>
-            </div>
-        </div>
-    ))}
-</div>
+        ))}
+    </div>
 
     );
 };

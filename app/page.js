@@ -1,21 +1,19 @@
-import Image from "next/image";
-import Facebook from "../public/images/fa.png"
-import twitter from "../public/images/tw.png"
-import Instagram from "../public/images/ins.png"
+
 import Link from "next/link";
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen px-8 py-12 bg-gray-100">
-      <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-4xl font-bold mb-8">Welcome to Go India Stocks</h1>
-        <p className="text-lg mb-8">Hi, my name is Alauddin. This is a website where you can explore more about stocks and investing.</p>
+      <div className="max-w-6xl mx-auto text-center">
+        <img src="https://i.ibb.co/54KtY9S/logo.webp" className="w-24 md:w-32 lg:w-32 mx-auto md:h-20 h-16 lg:h-20" alt="" />
+        <h1 className="text-4xl md:text-5xl lg:text-5xl  mb-8"><span className="text-slate-800">GO INDIA </span><span className="text-red-700">STOCKS</span></h1>
+  
         <Link href="/dashboard/discussion">
-          <span className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+          <span className="bg-gray-800 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
             Explore Dashboard
           </span>
         </Link>
       </div>
-      <div className="mt-12 max-w-4xl mx-auto">
+      <div className="mt-12 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white rounded-lg p-6">
             <h2 className="text-2xl font-semibold mb-4">About Us</h2>
@@ -28,20 +26,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="mt-12 max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-4">Follow Us</h2>
-        <div className="flex items-center space-x-4">
-          <a href="#" className="text-blue-500 hover:text-blue-600">
-            <Image src={twitter} alt="Twitter" width={24} height={24} />
-          </a>
-          <a href="#" className="text-blue-500 hover:text-blue-600">
-            <Image src={Facebook} alt="Facebook" width={24} height={24} />
-          </a>
-          <a href="#" className="text-blue-500 hover:text-blue-600">
-            <Image src={Instagram} alt="Instagram" width={24} height={24} />
-          </a>
-        </div>
-      </div>
+      
     </main>
   );
 }

@@ -1,6 +1,7 @@
+
 import React from 'react';
 
-const MarketStoriesCard = () => {
+const MarketStoriesPage = () => {
     const marketStoriesData = [
         {
             _id: 1,
@@ -58,22 +59,21 @@ const MarketStoriesCard = () => {
         }
     ];
     
-
-
-
-
     return (
-        <div >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            
             { marketStoriesData?.map(item => (
-                <div key={item._id} className="bg-white p-4 border my-2 rounded shadow-md">
+                <div key={item._id} className="bg-white p-4 rounded shadow-md">
                   
                     <img src={item.image} alt={item.title} className="w-full h-44 mb-2" />
                       <h2 className="text-lg font-semibold mb-2">{item.title}</h2>
                     <p className="text-sm">{item.desc}</p>
                 </div>
             ))}
+        
+            
         </div>
     );
 };
 
-export default MarketStoriesCard;
+export default MarketStoriesPage;

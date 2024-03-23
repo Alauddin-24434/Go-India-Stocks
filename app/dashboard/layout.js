@@ -4,7 +4,7 @@ import Sidebar from '@/components/Sidebar/Sidebar';
 
 export default function DashboardLayout({ children }) {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const [isLoading, setIsLoading] = useState(true); // Loading state
+ 
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
@@ -18,26 +18,17 @@ export default function DashboardLayout({ children }) {
                 <div className=''>
                     <div className="flex">
                         {/* Sidebar for larger screens */}
-                        <div className="h-full" >
-                            <Sidebar setIsLoading={setIsLoading} setIsSidebarOpen={setIsSidebarOpen} toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen } />
+                        <div className="h-full fixed z-50" >
+                            <Sidebar  setIsSidebarOpen={setIsSidebarOpen} toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen } />
                         </div>
 
                         <div className="w-full">
-                            {/* Toggle button for small screens */}
-                           
-
-
-                            {/* Main content or loader icon */}
-                            {isLoading ? (
-                                <div className="flex justify-center items-center h-screen">
-                                    {/* Replace this with your loader icon */}
-                                    <div className="loader">Loading.......</div>
-                                </div>
-                            ) : (
-                                <div className="h-screen bg-white p-3 px-4">
+                          
+                          
+                                <div className={`h-screen overflow-y-scroll bg-white p-3 px-4 ${isSidebarOpen ? 'ml-0 md:ml-48 lg:ml-48 xl:ml-48 2xl:ml-48' : ''}`}>
                                     {children}
                                 </div>
-                            )}
+                       
                         </div>
                     </div>
                 </div>
