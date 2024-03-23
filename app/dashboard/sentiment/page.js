@@ -1,5 +1,6 @@
-import React from 'react';
-
+"use client"
+import React, { useEffect } from 'react';
+import { initAOS } from '@/utils/aos-init';
 const SentimentPage = () => {
     // Example data for demonstration purposes
     const seminticData = [
@@ -15,9 +16,11 @@ const SentimentPage = () => {
         { id: 3, stockName: 'MSFT', sentiment: 'Neutral', score: 0, date: '2024-01-03' },
         // Add more data as needed
     ];
-
+    useEffect(() => {
+        initAOS();
+    }, []);
     return (
-        <div className="container mx-auto p-4">
+        <div data-aos="zoom-in-left" className="container mx-auto p-4">
             <h1 className="text-3xl font-bold mb-6">Stock Sentiment Analysis</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="bg-white rounded-lg shadow-md p-6">

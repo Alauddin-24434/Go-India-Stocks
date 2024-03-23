@@ -1,5 +1,6 @@
-import React from 'react';
-
+"use client"
+import React, { useEffect } from 'react';
+import { initAOS } from '@/utils/aos-init';
 const SectorPage = () => {
     // Example data for demonstration purposes
     const sectorData = [
@@ -8,9 +9,11 @@ const SectorPage = () => {
         { id: 3, sectorName: 'Healthcare', companies: ['PFE', 'MRK', 'JNJ'] },
         // Add more data points as needed
     ];
-
+    useEffect(() => {
+        initAOS();
+    }, []);
     return (
-        <div className="container mx-auto p-4">
+        <div data-aos="zoom-in-right" className="container mx-auto p-4">
             <h1 className="text-3xl font-bold mb-6">Sector Overview</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {sectorData.map(sector => (

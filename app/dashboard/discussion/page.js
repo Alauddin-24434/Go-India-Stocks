@@ -1,4 +1,5 @@
 "use client"
+import { initAOS } from '@/utils/aos-init';
 import DiscussionForumCard from '@/components/Dashboard/DiscussionForumCard/DiscussionForumCard';
 import MarketStoriesCard from '@/components/Dashboard/MarketStoriesCard/MarketStoriesCard';
 import React, { useState, useEffect } from 'react';
@@ -26,9 +27,12 @@ const DiscussionPage = () => {
             setSelectedOption('DiscussionForum');
         }
     }, [isSmallScreen, selectedOption]);
+    useEffect(() => {
+        initAOS();
+    }, []);
 
     return (
-        <div className='h-screen'>
+        <div data-aos="fade-down" className='h-screen'>
             {/* Large screen layout */}
             <div className='hidden md:grid lg:grid xl:grid 2xl:grid gap-4 grid-cols-9'>
                 <div className='col-span-6 text-center'>

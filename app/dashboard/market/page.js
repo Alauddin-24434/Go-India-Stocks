@@ -1,4 +1,7 @@
-import React from 'react';
+"use client"
+import { initAOS } from '@/utils/aos-init';
+import React, { useEffect } from 'react';
+// Import the AOS initialization function
 
 const MarketPage = () => {
     // Example data for demonstration purposes
@@ -9,8 +12,13 @@ const MarketPage = () => {
         // Add more data points as needed
     ];
 
+    // Initialize AOS when the component mounts
+    useEffect(() => {
+        initAOS();
+    }, []);
+
     return (
-        <div className="container mx-auto p-4">
+        <div className="container mx-auto p-4" data-aos="fade-right"> {/* Add data-aos attribute */}
             <h1 className="text-3xl font-bold mb-6">Market Overview</h1>
             <div className="bg-white rounded-lg shadow-md p-6">
                 <h2 className="text-xl font-semibold mb-4">Stock Market Data</h2>

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const MarketStoriesCard = () => {
+     // Initialize AOS when the component mounts
+  
     const marketStoriesData = [
         {
             _id: 1,

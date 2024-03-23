@@ -1,5 +1,6 @@
-import React from 'react';
-
+"use client"
+import React, { useEffect } from 'react';
+import { initAOS } from '@/utils/aos-init';
 const WatchlistPage = () => {
     // Example data for demonstration purposes
     const watchlistData = [
@@ -8,9 +9,11 @@ const WatchlistPage = () => {
         { id: 3, companyName: 'Microsoft Corporation', symbol: 'MSFT', price: 305.40, change: 1.75, percentChange: 0.58 },
         // Add more data points as needed
     ];
-
+    useEffect(() => {
+        initAOS();
+    }, []);
     return (
-        <div className="container mx-auto p-4">
+        <div data-aos="zoom-in-right" className="container mx-auto p-4">
             <h1 className="text-3xl font-bold mb-6">My Watchlist</h1>
             <div className="bg-white rounded-lg shadow-md p-6">
                 <h2 className="text-xl font-semibold mb-4">Watchlist Data</h2>

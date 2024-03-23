@@ -1,5 +1,7 @@
-import React from 'react';
 
+"use client"
+import React, { useEffect } from 'react';
+import { initAOS } from '@/utils/aos-init';
 const EventPage = () => {
     // Example data for demonstration purposes
     const eventData = [
@@ -8,9 +10,11 @@ const EventPage = () => {
         { id: 3, eventName: 'Conference', date: '2024-03-05', time: '09:30', description: 'Microsoft Build 2024 Developer Conference' },
         // Add more data points as needed
     ];
-
+    useEffect(() => {
+        initAOS();
+    }, []);
     return (
-        <div className="container mx-auto p-4">
+        <div data-aos="zoom-in-right" className="container mx-auto p-4">
             <h1 className="text-3xl font-bold mb-6">Upcoming Events</h1>
             <div className="bg-white rounded-lg shadow-md p-6">
                 <h2 className="text-xl font-semibold mb-4">Event Schedule</h2>

@@ -1,5 +1,6 @@
-import React from 'react';
-
+"use client"
+import React, { useEffect } from 'react';
+import { initAOS } from '@/utils/aos-init';
 const NewsPage = () => {
     // Example data for demonstration purposes
     const newsData = [
@@ -8,9 +9,11 @@ const NewsPage = () => {
         { id: 3, headline: 'Microsoft acquires leading cybersecurity firm', date: '2024-01-14', source: 'Reuters' },
         // Add more data points as needed
     ];
-
+    useEffect(() => {
+        initAOS();
+    }, []);
     return (
-        <div className="container mx-auto p-4">
+        <div data-aos="zoom-in-left" className="container mx-auto p-4">
             <h1 className="text-3xl font-bold mb-6">Latest News</h1>
             <div className="bg-white rounded-lg shadow-md p-6">
                 <h2 className="text-xl font-semibold mb-4">News Headlines</h2>

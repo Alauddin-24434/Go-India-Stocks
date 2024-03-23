@@ -1,6 +1,6 @@
-
-import React from 'react';
-
+"use client"
+import React, { useEffect } from 'react';
+import { initAOS } from '@/utils/aos-init';
 const MarketStoriesPage = () => {
     const marketStoriesData = [
         {
@@ -58,9 +58,12 @@ const MarketStoriesPage = () => {
             desc: 'Explore beyond the horizon, where endless possibilities await and the unknown beckons with promise.'
         }
     ];
-    
+    useEffect(() => {
+        initAOS();
+    }, []);
+
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div  data-aos="zoom-in" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             
             { marketStoriesData?.map(item => (
                 <div key={item._id} className="bg-white p-4 rounded shadow-md">

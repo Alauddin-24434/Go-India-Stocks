@@ -3,6 +3,7 @@ import { FaRegHeart, FaRegEye, FaRegComment, FaShareAlt } from 'react-icons/fa';
 
 
 const DiscussionForumCard = () => {
+
     const dummyPosts = [
         {
             id: 3,
@@ -81,7 +82,7 @@ const DiscussionForumCard = () => {
 
 
     return (
-        <div className='flex flex-col'>
+        <div   className='flex flex-col'>
         {dummyPosts.map(post => (
             <div className='grid relative grid-cols-8 gap-2 my-4 shadow-xl border py-3' key={post.id}>
                 <div className='col-span-1 flex justify-center'>
