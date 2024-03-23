@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const MarketStoriesCard = () => {
      // Initialize AOS when the component mounts
-  
+//   dummy data
     const marketStoriesData = [
         {
             _id: 1,
@@ -66,6 +66,7 @@ const MarketStoriesCard = () => {
 
     return (
         <div >
+            {/* map dummy data */}
             { marketStoriesData?.map(item => (
                 <div key={item._id} className="bg-white p-4 border my-2 rounded shadow-md">
                   

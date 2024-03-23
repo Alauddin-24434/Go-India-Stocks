@@ -58,25 +58,24 @@ const MarketStoriesPage = () => {
             desc: 'Explore beyond the horizon, where endless possibilities await and the unknown beckons with promise.'
         }
     ];
+    // useEffect hook to initialize AOS on component mount
     useEffect(() => {
-        initAOS();
+        initAOS(); // Calling the AOS initialization function
     }, []);
 
+    // Rendering the component
     return (
-        <div  data-aos="zoom-in" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            
-            { marketStoriesData?.map(item => (
-                <div key={item._id} className="bg-white p-4 rounded shadow-md">
-                  
-                    <img src={item.image} alt={item.title} className="w-full h-44 mb-2" />
-                      <h2 className="text-lg font-semibold mb-2">{item.title}</h2>
-                    <p className="text-sm">{item.desc}</p>
+        <div  data-aos="zoom-in" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"> {/* Apply AOS animation and grid layout */}
+            {/* Mapping over the marketStoriesData array */}
+            { marketStoriesData?.map(item => ( 
+                <div key={item._id} className="bg-white p-4 rounded shadow-md"> {/* Container for each market story */}
+                    <img src={item.image} alt={item.title} className="w-full h-44 mb-2" /> {/* Image for the market story */}
+                    <h2 className="text-lg font-semibold mb-2">{item.title}</h2> {/* Title for the market story */}
+                    <p className="text-sm">{item.desc}</p> {/* Description for the market story */}
                 </div>
             ))}
-        
-            
         </div>
     );
 };
 
-export default MarketStoriesPage;
+export default MarketStoriesPage; 
