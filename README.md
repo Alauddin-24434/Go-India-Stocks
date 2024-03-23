@@ -1,5 +1,5 @@
 
-This is a [Next.js](https://nextjs.org/) project 
+## This is a Next.js project that utilizes Tailwind CSS for styling.
 ## Live Link:  https://go-india-stocks-zeta.vercel.app
 ## Before Getting Started 
 Must install node package: 
@@ -8,6 +8,7 @@ npm install
 # or
 npm i
 # or
+yarn add
 
 ```
 Getting Started:Run the development server using various npm scripts (npm run dev, yarn dev, pnpm dev, bun dev).
